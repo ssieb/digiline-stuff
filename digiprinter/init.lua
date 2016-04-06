@@ -130,7 +130,7 @@ minetest.register_node("digiprinter:printer", {
 		return (stack:get_name() == "default:paper" and stack:get_count() or 0)
 	end,
 	allow_metadata_inventory_take = function(pos, listname, index, stack, player)
-		return (minetest.get_meta(pos):get_string("infotext"):find("Busy") and stack:get_count() or 0)
+		return (minetest.get_meta(pos):get_string("infotext"):find("Idle") and stack:get_count() or 0)
 	end,
 	can_dig = function(pos, player)
 		return minetest.get_meta(pos):get_inventory():is_empty("paper")
